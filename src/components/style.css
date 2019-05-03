@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+html {
+}
+
+a,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: black;
+}
+
+a {
+  border-bottom: 1px solid black;
+}
+
+body {
+  background: white;
+}
+
+.lead {
+  font-size: calc(16px + 1.5vw);
+}

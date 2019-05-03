@@ -1,7 +1,45 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
+import "./style.css"
+import Bio from "./bio"
 
-import { rhythm, scale } from "../utils/typography"
+const Wrapper = styled.div`
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 15px;
+`
+const Logo = styled.div`
+  * {
+    border: 0;
+    color: blue;
+  }
+`
+
+const Main = styled.main`
+  margin: 0 0 100px 0;
+`
+
+const Footer = styled.footer`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  font-size: 10px;
+  border: 0;
+  text-transform: uppercase;
+
+  .col {
+    * {
+      display: block;
+    }
+  }
+
+  .col-disclaimer {
+    * {
+      border: 0;
+    }
+  }
+`
 
 class Layout extends React.Component {
   render() {
@@ -11,63 +49,50 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1
-          style={{
-            ...scale(1.5),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h1>
+        <Logo>
+          <h1 className="lead">
+            <Link to={`/`}>{title}</Link>
+          </h1>
+        </Logo>
       )
     } else {
       header = (
-        <h3
-          style={{
-            fontFamily: `Montserrat, sans-serif`,
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: `none`,
-              textDecoration: `none`,
-              color: `inherit`,
-            }}
-            to={`/`}
-          >
-            {title}
-          </Link>
-        </h3>
+        <Logo>
+          <h3>
+            <Link to={`/`}>{title}</Link>
+          </h3>
+        </Logo>
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
+      <Wrapper>
         <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+
+        <Main>{children}</Main>
+        <Footer>
+          <div className="col">
+            Luis Ferreira
+            <br />
+            Creative technologist <br />
+            Mustertraat 22
+            <br />
+            83756 Eindhoven
+          </div>
+
+          <div className="col">
+            Linkedin
+            <br />
+            Github
+            <br />
+            Facebook
+          </div>
+
+          <div className="col col-disclaimer">
+            <Link to="/">Privacy Policy</Link>
+            <Link to="/">Disclaimer</Link>
+          </div>
+        </Footer>
+      </Wrapper>
     )
   }
 }
