@@ -6,7 +6,7 @@ import Bio from "./bio"
 
 const Wrapper = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 15px;
 `
@@ -69,6 +69,7 @@ class Layout extends React.Component {
         <header>{header}</header>
 
         <Main>{children}</Main>
+
         <Footer>
           <div className="col">
             Luis Ferreira
@@ -88,8 +89,8 @@ class Layout extends React.Component {
           </div>
 
           <div className="col col-disclaimer">
-            <Link to="/">Privacy Policy</Link>
-            <Link to="/">Disclaimer</Link>
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/disclaimer">Disclaimer</Link>
           </div>
         </Footer>
       </Wrapper>

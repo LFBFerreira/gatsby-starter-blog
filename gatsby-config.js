@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Luis Ferreira Creative Coding`,
+    title: `Luis Ferreira`,
     author: `Luis Ferreira`,
     description: ``,
     siteUrl: `https://LFBFerreira.github.com`,
@@ -73,7 +73,6 @@ module.exports = {
         defaultQuality: 75,
       },
     },
-
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
   ],
